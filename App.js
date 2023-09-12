@@ -1,6 +1,6 @@
 
 import React, {useState} from 'react';
-import { Keyboard, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Keyboard, ScrollView, StyleSheet, Text, View, Alert } from 'react-native';
 
 // components
 import AddAssignment from './components/AddAssignment';
@@ -14,15 +14,36 @@ export default function App() {
   // add and delete assignment
   const addAssign = (newAssign) => {
     // if assign is null return nothing
-    if (assign === null) return; // fix if statement
+    if (assign === null || assign === "") return; // fix if statement
     setAssign([...assign, newAssign]); // store new array element inside the array called assign
     Keyboard.dismiss();
   }
 
   const deleteAssign = (deleteIndex) => {
     // if assign is null return nothing
-    setAssign(assign.filter((value, index) => index != deleteIndex));
+    Alert.alert(
+          'Delete Assignment',
+          'Do you want to delete this assignment?',
+          [
+            {
+              text: 'Cancel',
+              onPress: () => {},
+              style: 'cancel',
+            },
+            {
+              text: 'Delete',
+              onPress: () => {
+                setAssign(assign.filter((value, index) => index != deleteIndex));
+                Alert.alert("Assignment Deleted");
+              },
+              style: 'destructive',
+            },
+          ],
+        );
+
   }
+
+
 
   return (
     <View style={styles.container}>
@@ -32,6 +53,7 @@ export default function App() {
         This array map renders an AssignmentItem taken from the AddAssignment input box 
       */}
       {
+        assign.length === 0 ? <Text style={styles.assignmentText}>No assignments yet. Create one?</Text> : (
         assign.map((assign, index) => {
           return (
             <View key={index} style={styles.assignContainer}>
@@ -39,6 +61,7 @@ export default function App() {
             </View>
           );
         })
+        )
       }
       </ScrollView>
       <AddAssignment addAssign={addAssign}/>
@@ -65,5 +88,11 @@ const styles = StyleSheet.create({
   },
   assignContainer: {
     marginTop: 20,
-  }
+  },
+  assignmentText: {
+    textAlign: 'center',
+    fontSize: 16,
+    fontWeight: '600',
+    marginTop: 30,
+  },
 });

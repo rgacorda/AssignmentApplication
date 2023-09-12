@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { KeyboardAvoidingView, StyleSheet, View, TextInput, TouchableOpacity, } from "react-native";
+import { KeyboardAvoidingView, StyleSheet, View, TextInput, TouchableOpacity, Alert } from "react-native";
 import { AntDesign } from '@expo/vector-icons'; 
 
 
@@ -7,7 +7,9 @@ const AddAssignment = (props) => {
     const [assign, setAssign] = useState();
 
     const handleAddAssign = (value) => {
-        // set assign to null 
+        // set assign to null
+        if (assign === null || assign === "") {return}
+        else {Alert.alert("Assignment Added");};
         props.addAssign(value);
         setAssign(null);
     }

@@ -2,16 +2,16 @@ import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 
-import Check from './Check';
+import CheckBox from './CheckBox';
 
 const AssignmentItem = (props) => {
     return(
         <View style={styles.container}>
             <View style={styles.indexContainer}>
-            <Check/>
+            <CheckBox/>
         </View>
         <View style={styles.taskContainer}>
-            <Text style={styles.task}>{props.assign}</Text>
+            <Text style={styles.task}>{props.assign.slice(0, 25) + (props.assign.length > 20 ? "..." : "")}</Text>
             <TouchableOpacity onPress={() => props.deleteAssign()}>
                 <MaterialIcons style={styles.delete} name="delete" size={18} color='#fff' />
             </TouchableOpacity>
