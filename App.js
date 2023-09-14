@@ -83,13 +83,38 @@ export default function App() {
       <View style={{ marginTop: 10, }}>
         {/* Header */}
         <View style={{ paddingVertical: 40, paddingHorizontal: 20, display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }} >
-          <TouchableOpacity onPress={() => {setShowCompletedModal(true)}} >
+          <TouchableOpacity 
+            style={{
+              padding: 5,
+              borderRadius: 3,
+              backgroundColor: 'white', // Add a background color
+              shadowColor: 'black', // Shadow color
+              shadowOffset: { width: 0, height: 2 }, // Shadow offset
+              shadowOpacity: 0.2, // Shadow opacity
+              shadowRadius: 2, // Shadow radius
+              elevation: 2, // For Android
+            }}
+            onPress={() => {setShowCompletedModal(true)}} 
+          >
             <Feather name="check-square" size={24} color="black" />
           </TouchableOpacity>
 
-          <Text style={{ fontWeight:'bold', fontSize:32, }}>Assignments</Text>
+          <Text style={{ fontWeight:'bold', fontSize:24, }}>ASSIGNEMNT APP</Text>
 
-          <TouchableOpacity onPress={() => {setShowModal(true)}} >
+          <TouchableOpacity 
+            style={{
+              padding: 5,
+              borderRadius: 3,
+              backgroundColor: 'white', // Add a background color
+              shadowColor: 'black', // Shadow color
+              shadowOffset: { width: 0, height: 2 }, // Shadow offset
+              shadowOpacity: 0.2, // Shadow opacity
+              shadowRadius: 2, // Shadow radius
+              elevation: 2, // For Android
+            }}
+            onPress={() => {setShowModal(true)}} 
+            
+          >
             <Ionicons name="add-outline" size={24} color="black" />
           </TouchableOpacity>
           {/* <Text>{assignment.length.toString()}</Text> */}
@@ -110,12 +135,21 @@ export default function App() {
           flexDirection: 'row',
           alignItems: 'center',
           justifyContent: 'center',
-          // borderWidth: 2,
           marginHorizontal: 20,
+          paddingVertical: 5,
+          paddingHorizontal: 15,
+          borderRadius: 3,
+          marginTop: 5,
+          backgroundColor: 'white', // Add a background color
+          shadowColor: 'black', // Shadow color
+          shadowOffset: { width: 0, height: 2 }, // Shadow offset
+          shadowOpacity: 0.2, // Shadow opacity
+          shadowRadius: 2, // Shadow radius
+          elevation: 2, // For Android
         }}
           onPress={() => {setShowModal(true)}}
         >
-          <Ionicons name="add-outline" size={24} color="black" />
+          <Ionicons name="add-outline" size={32} color="black" />
         </TouchableOpacity>
 
         
@@ -141,6 +175,7 @@ export default function App() {
       setShowModal={setShowModal}
       item={assignment}
       deleteAssignment={deleteAssignment}
+      updateAssignment={updateAssignment}
       />
 
     </View>

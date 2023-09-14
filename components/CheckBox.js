@@ -46,13 +46,17 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 3,
-    borderWidth: 2,
+    borderWidth: 1,
     borderColor: '#000',
     backgroundColor: 'transparent',
   },
   checkboxChecked: {
-    backgroundColor: '#fff',
+    backgroundColor: '#6bf236',
     borderWidth: 0,
-    borderWidth: 2,
+    shadowColor: 'black', // Shadow color for iOS
+    shadowOffset: { width: 0, height: -2 }, // Negative shadow offset for iOS
+    shadowOpacity: 0.2, // Shadow opacity for iOS
+    shadowRadius: 2, // Shadow radius for iOS
+    elevation: -2, // For Android (negative elevation)
   },
 });

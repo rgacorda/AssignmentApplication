@@ -10,19 +10,23 @@ export default function AddAssignmentModal( { setShowCompletedModal, showModal, 
       >
 
         <View style={{ paddingVertical: 30, paddingHorizontal: 20, display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }} >
-          <Text style={{ fontWeight:'bold', fontSize:32 }}>Add Assignment</Text>
+          <Text style={{ fontWeight:'bold', fontSize:24 }}>ADD ASSIGNMENT</Text>
         </View>
         
         <View>
           <View >
             <TextInput
               style={{
-                borderWidth: 1,
-                borderColor: '#000',
+                shadowColor: 'black', // Shadow color for iOS
+                shadowOffset: { width: 0, height: 2 }, // Shadow offset for iOS
+                shadowOpacity: 0.2, // Shadow opacity for iOS
+                shadowRadius: 2, // Shadow radius for iOS
+                elevation: 2, // For Android
                 borderRadius: 5,
                 padding: 10,
                 marginHorizontal: 20,
                 marginVertical: 10,
+                backgroundColor: 'white',
               }}
               placeholder='Title'
               value={newAssignment.title.toString()}
@@ -31,12 +35,16 @@ export default function AddAssignmentModal( { setShowCompletedModal, showModal, 
             ></TextInput>
             <TextInput
               style={{
-                borderWidth: 1,
-                borderColor: '#000',
+                shadowColor: 'black', // Shadow color for iOS
+                shadowOffset: { width: 0, height: 2 }, // Shadow offset for iOS
+                shadowOpacity: 0.2, // Shadow opacity for iOS
+                shadowRadius: 2, // Shadow radius for iOS
+                elevation: 2, // For Android
                 borderRadius: 5,
                 padding: 10,
                 marginHorizontal: 20,
                 marginVertical: 10,
+                backgroundColor: 'white',
               }}
               placeholder='Description'
               value={newAssignment.description.toString()}
@@ -61,15 +69,19 @@ export default function AddAssignmentModal( { setShowCompletedModal, showModal, 
             <TouchableOpacity onPress={addAssignment}>
             <View
               style={{
-                borderWidth: 2,
+                // borderWidth: 1,
                 padding: 10,
                 width: 100,
                 borderRadius: 3,
+                backgroundColor: 'white', // Add a background color for the shadow to be visible
+                shadowColor: 'black', // Shadow color for iOS
+                shadowOffset: { width: 0, height: 2 }, // Shadow offset for iOS
+                shadowOpacity: 0.2, // Shadow opacity for iOS
+                shadowRadius: 2, // Shadow radius for iOS
+                elevation: 2, // For Android
               }}
             >
-            
               <Text style={{ textAlign: 'center' }}>Add</Text>
-            
             </View>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => {
@@ -79,12 +91,18 @@ export default function AddAssignmentModal( { setShowCompletedModal, showModal, 
               }  
             }}>
             <View
-               style={{
-                borderWidth: 2,
-                padding: 10,
-                width: 100,
-                borderRadius: 3,
-              }}
+                style={{
+                  // borderWidth: 1,
+                  padding: 10,
+                  width: 100,
+                  borderRadius: 3,
+                  backgroundColor: 'white', // Add a background color for the shadow to be visible
+                  shadowColor: 'black', // Shadow color for iOS
+                  shadowOffset: { width: 0, height: 2 }, // Shadow offset for iOS
+                  shadowOpacity: 0.2, // Shadow opacity for iOS
+                  shadowRadius: 2, // Shadow radius for iOS
+                  elevation: 2, // For Android
+                }}
             >
             
               <Text style={{ textAlign: 'center' }}>Cancel</Text>
