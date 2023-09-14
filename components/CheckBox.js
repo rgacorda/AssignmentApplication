@@ -33,7 +33,7 @@ export default function CheckBox({ isChecked, onChange, title, desc }) {
       style={[styles.checkboxBase, checked && styles.checkboxChecked]}
       onPress={toggleChecked}
     >
-      {checked && <FontAwesome name="check" size={15} color="#000" />}
+      {checked && <FontAwesome name="check" size={15} color="#FFF" />}
     </Pressable>
   );
 }

@@ -129,9 +129,10 @@ export default function App() {
         />
 
         
-        {/* <TouchableOpacity 
+        <TouchableOpacity 
           style={{ 
-            display: 'flex',
+            display: 'absolute',
+            bottom: 50,
             flexDirection: 'row',
             alignItems: 'center',
             justifyContent: 'center',
@@ -140,7 +141,7 @@ export default function App() {
             paddingHorizontal: 15,
             borderRadius: 3,
             marginTop: 5,
-            backgroundColor: 'white', // Add a background color
+            backgroundColor: '#8fb3ff', // Add a background color
             shadowColor: 'black', // Shadow color
             shadowOffset: { width: 0, height: 2 }, // Shadow offset
             shadowOpacity: 0.2, // Shadow opacity
@@ -149,8 +150,8 @@ export default function App() {
           }}
           onPress={() => {setShowModal(true)}}
         >
-          <Ionicons name="add-outline" size={32} color="black" />
-        </TouchableOpacity> */}
+          <Ionicons name="add-outline" size={32} color="white" />
+        </TouchableOpacity>
 
         
         <StatusBar style="auto" />
