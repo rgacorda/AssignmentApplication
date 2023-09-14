@@ -1,26 +1,35 @@
 import React from 'react';
-import { ScrollView, View, Modal, Text } from 'react-native';
+import { Modal, ScrollView, Text, View , TouchableOpacity} from 'react-native';
+import { Feather } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
+import AssignmentItem from './AssignmentItem';
 
-const CompletedAssignmentsModal = ({ showCompletedModal, setShowCompletedModal, assignment, displayAssignment }) => {
-  return (
+export default function CompletedAssignmentsModal( { item, showCompletedModal, setShowCompletedModal, assignment, displayAssignment , setShowModal} ) {
+  return(
     <Modal
-      visible={showCompletedModal}
-      animationType='slide'
-      onRequestClose={() => setShowCompletedModal(false)}
-    >
-      <View >
-          <View >
-         <Text >Completed Assignments</Text>
+        visible={showCompletedModal}
+        animationType='slide'
+        onRequestClose={() => setShowCompletedModal(false)}
+      >
+        <View >
+        <View style={{ paddingVertical: 40, paddingHorizontal: 20, display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }} >
+          <TouchableOpacity onPress={() => {setShowCompletedModal(true)}} key={item.id} >
+            <Feather name="check-square" size={24} color="black" />
+          </TouchableOpacity>
 
-          </View>
+          <Text style={{ fontWeight:'bold', fontSize:32, }}>Completed</Text>
+
+          <TouchableOpacity onPress={() => {setShowModal(true)}} >
+            <Ionicons name="add-outline" size={24} color="black" />
+          </TouchableOpacity>
+          {/* <Text>{assignment.length.toString()}</Text> */}
+        </View>
           <ScrollView>
             <View>
               {assignment.map(item => item.completed ? displayAssignment(item) : null)}
             </View>
-         </ScrollView>
+          </ScrollView>
         </View>
-    </Modal>
+      </Modal>
   );
-};
-
-export default CompletedAssignmentsModal;
+}

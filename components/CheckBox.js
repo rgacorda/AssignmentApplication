@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 7,
     borderWidth: 2,
-    borderColor: '#fff',
+    borderColor: '#000',
     backgroundColor: 'transparent',
   },
   checkboxChecked: {
