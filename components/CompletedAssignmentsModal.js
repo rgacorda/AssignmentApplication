@@ -52,7 +52,7 @@ export default function CompletedAssignmentsModal( { updateAssignment, deleteAss
           {/* <Text>{assignment.length.toString()}</Text> */}
         </View>
           <ScrollView style={{
-            height: 500
+            height: 600
           }}>
             <View >
               {completedAssignmentsExist ? (

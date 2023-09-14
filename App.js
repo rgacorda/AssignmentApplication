@@ -129,7 +129,7 @@ export default function App() {
         />
 
         
-        <TouchableOpacity 
+        {/* <TouchableOpacity 
           style={{ 
             display: 'flex',
             flexDirection: 'row',
@@ -150,7 +150,7 @@ export default function App() {
           onPress={() => {setShowModal(true)}}
         >
           <Ionicons name="add-outline" size={32} color="black" />
-        </TouchableOpacity>
+        </TouchableOpacity> */}
 
         
         <StatusBar style="auto" />

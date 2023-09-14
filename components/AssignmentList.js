@@ -8,7 +8,7 @@ export default function AssignmentList({ assignments, updateAssignment, deleteAs
 
   return(
       <ScrollView style={{
-        height: 500
+        height: 600
       }}>
         <View>
         {unmarkedAssignmentsExist ? (
