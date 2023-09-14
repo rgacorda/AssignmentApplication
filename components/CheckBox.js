@@ -1,31 +1,58 @@
-import { useState } from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { Pressable, StyleSheet, Text, View, Alert } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 
-export default function CheckBox() {
-  const [checked, setChecked] = useState(false);
+export default function CheckBox({ isChecked, onChange, title, desc }) {
+    const [checked, setChecked] = useState(isChecked);
+  
+    useEffect(() => {
+      setChecked(isChecked);
+    }, [isChecked]);
+  
+    const toggleChecked = () => {
+      Alert.alert(`${title}`, `${desc}`, [
+        {
+            text: checked ? 'Mark InProgress' : 'Mark Completed',
+            onPress: () => {
+              setChecked(!checked);
+              if (onChange) {
+                onChange(!checked);
+              }
+            },
+        },
+        {
+          text: 'No',
+          style: 'cancel',
+        },
+        
+      ]);
+    };
+
   return (
     <Pressable
       style={[styles.checkboxBase, checked && styles.checkboxChecked]}
-      onPress={() => setChecked(!checked)}>
-      {checked && <FontAwesome name="check" size={22} color="#ac1852" />}
+      onPress={toggleChecked}
+    >
+      {checked && <FontAwesome name="check" size={15} color="#000" />}
     </Pressable>
   );
 }
 
+
 const styles = StyleSheet.create({
   checkboxBase: {
-    width: 32,
-    height: 32,
+    width: 24,
+    height: 24,
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 10,
+    borderRadius: 7,
     borderWidth: 2,
     borderColor: '#fff',
     backgroundColor: 'transparent',
   },
   checkboxChecked: {
-    backgroundColor: '#e14c84',
+    backgroundColor: '#fff',
     borderWidth: 0,
+    borderWidth: 2,
   },
 });
