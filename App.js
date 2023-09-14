@@ -96,7 +96,7 @@ export default function App() {
             }}
             onPress={() => {setShowCompletedModal(true)}} 
           >
-            <Feather name="check-square" size={24} color="black" />
+            <Feather name="check-square" size={24} color="#6bf236" />
           </TouchableOpacity>
 
           <Text style={{ fontWeight:'bold', fontSize:24, }}>ASSIGNMENT APP</Text>
@@ -115,7 +115,7 @@ export default function App() {
             onPress={() => {setShowModal(true)}} 
             
           >
-            <Ionicons name="add-outline" size={24} color="black" />
+            <Ionicons name="add-outline" size={24} color="#8fb3ff" />
           </TouchableOpacity>
           {/* <Text>{assignment.length.toString()}</Text> */}
         </View>

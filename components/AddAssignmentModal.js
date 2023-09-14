@@ -26,7 +26,7 @@ export default function AddAssignmentModal( { setShowCompletedModal, showModal, 
                 padding: 10,
                 marginHorizontal: 20,
                 marginVertical: 10,
-                backgroundColor: 'white',
+                backgroundColor: '#ebf1ff',
               }}
               placeholder='Title'
               value={newAssignment.title.toString()}
@@ -44,7 +44,7 @@ export default function AddAssignmentModal( { setShowCompletedModal, showModal, 
                 padding: 10,
                 marginHorizontal: 20,
                 marginVertical: 10,
-                backgroundColor: 'white',
+                backgroundColor: '#ebf1ff',
               }}
               placeholder='Description'
               value={newAssignment.description.toString()}
@@ -73,7 +73,7 @@ export default function AddAssignmentModal( { setShowCompletedModal, showModal, 
                 padding: 10,
                 width: 100,
                 borderRadius: 3,
-                backgroundColor: 'white', // Add a background color for the shadow to be visible
+                backgroundColor: '#6bf236', // Add a background color for the shadow to be visible
                 shadowColor: 'black', // Shadow color for iOS
                 shadowOffset: { width: 0, height: 2 }, // Shadow offset for iOS
                 shadowOpacity: 0.2, // Shadow opacity for iOS
@@ -81,7 +81,7 @@ export default function AddAssignmentModal( { setShowCompletedModal, showModal, 
                 elevation: 2, // For Android
               }}
             >
-              <Text style={{ textAlign: 'center' }}>Add</Text>
+              <Text style={{ textAlign: 'center', color: '#fff', fontWeight: 'bold' }}>Add</Text>
             </View>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => {

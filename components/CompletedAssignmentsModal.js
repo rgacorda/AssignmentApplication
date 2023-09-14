@@ -47,7 +47,7 @@ export default function CompletedAssignmentsModal( { updateAssignment, deleteAss
             }}
             onPress={() => {setShowModal(true)}} 
           >
-            <Ionicons name="add-outline" size={24} color="black" />
+            <Ionicons name="add-outline" size={24} color="#8fb3ff" />
           </TouchableOpacity>
           {/* <Text>{assignment.length.toString()}</Text> */}
         </View>
