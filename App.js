@@ -7,7 +7,6 @@ import React, { useState, useEffect } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 // Components
-import CheckBox from './components/CheckBox';
 import AssignmentItem from './components/AssignmentItem';
 import AssignmentList from './components/AssignmentList';
 import AddAssignmentModal from './components/AddAssignmentModal';
@@ -49,6 +48,7 @@ export default function App() {
     setAssignment(updatedAssignment);
     AsyncStorage.setItem("assignment", JSON.stringify(updatedAssignment));
     setShowModal(false);
+    setShowCompletedModal(false);
     clear();
   }
 
@@ -80,7 +80,7 @@ export default function App() {
     <View >
 
       {/* Assignment list, completed btn, add btn */}
-      <View>
+      <View style={{ marginTop: 10, }}>
         {/* Header */}
         <View style={{ paddingVertical: 40, paddingHorizontal: 20, display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }} >
           <TouchableOpacity onPress={() => {setShowCompletedModal(true)}} >
@@ -126,6 +126,7 @@ export default function App() {
       <AddAssignmentModal
       showModal={showModal}
       setShowModal={setShowModal}
+      setShowCompletedModal={setShowCompletedModal}
       newAssignment={newAssignment}
       handleChange={handleChange}
       addAssignment={addAssignment}
@@ -139,6 +140,7 @@ export default function App() {
       displayAssignment={displayAssignment}
       setShowModal={setShowModal}
       item={assignment}
+      deleteAssignment={deleteAssignment}
       />
 
     </View>

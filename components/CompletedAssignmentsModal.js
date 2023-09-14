@@ -4,7 +4,7 @@ import { Feather } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import AssignmentItem from './AssignmentItem';
 
-export default function CompletedAssignmentsModal( { item, showCompletedModal, setShowCompletedModal, assignment, displayAssignment , setShowModal} ) {
+export default function CompletedAssignmentsModal( { deleteAssignment, showCompletedModal, setShowCompletedModal, assignment, displayAssignment , setShowModal} ) {
   return(
     <Modal
         visible={showCompletedModal}
@@ -13,7 +13,7 @@ export default function CompletedAssignmentsModal( { item, showCompletedModal, s
       >
         <View >
         <View style={{ paddingVertical: 40, paddingHorizontal: 20, display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }} >
-          <TouchableOpacity onPress={() => {setShowCompletedModal(true)}} key={item.id} >
+          <TouchableOpacity onPress={() => {setShowCompletedModal(true)}}  >
             <Feather name="check-square" size={24} color="black" />
           </TouchableOpacity>
 
@@ -25,8 +25,17 @@ export default function CompletedAssignmentsModal( { item, showCompletedModal, s
           {/* <Text>{assignment.length.toString()}</Text> */}
         </View>
           <ScrollView>
-            <View>
-              {assignment.map(item => item.completed ? displayAssignment(item) : null)}
+            <View >
+            {assignment.map(item => item.completed ? (
+            <AssignmentItem
+              key={item.id}
+              item={item}
+              displayAssignment= {displayAssignment(item)}
+              deleteAssignment={deleteAssignment}
+            />
+          ) : 
+            null
+          )}
             </View>
           </ScrollView>
         </View>
