@@ -12,7 +12,7 @@ export default function CheckBox({ isChecked, onChange, title, desc }) {
     const toggleChecked = () => {
       Alert.alert(`${title}`, `${desc}`, [
         {
-            text: checked ? 'Mark InProgress' : 'Mark Completed',
+            text: checked ? 'Unmark' : 'Mark',
             onPress: () => {
               setChecked(!checked);
               if (onChange) {

@@ -32,7 +32,7 @@ export default function({ item, updateAssignment, deleteAssignment }) {
                 onPress={() =>
                 Alert.alert(`${item.title}`, `${item.description}`, [
                     {
-                        text: item.completed ? 'Mark InProgress' : 'Mark Completed',
+                        text: item.completed ? 'Unmark' : 'Mark',
                         onPress: () => updateAssignment(item),
                     },
                     {
@@ -67,7 +67,7 @@ export default function({ item, updateAssignment, deleteAssignment }) {
                     onPress={() =>
                         Alert.alert(`${item.title}`, `${item.description}`, [
                             {
-                                text: item.completed ? 'Delete Uncompleted' : 'Delete Completed',
+                                text: item.completed ? 'Delete Marked' : 'Delete Unmarked',
                                 onPress: () => deleteAssignment(item.id),
                             },
                             {
