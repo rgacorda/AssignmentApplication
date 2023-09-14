@@ -130,23 +130,23 @@ export default function App() {
 
         
         <TouchableOpacity 
-        style={{ 
-          display: 'flex',
-          flexDirection: 'row',
-          alignItems: 'center',
-          justifyContent: 'center',
-          marginHorizontal: 20,
-          paddingVertical: 5,
-          paddingHorizontal: 15,
-          borderRadius: 3,
-          marginTop: 5,
-          backgroundColor: 'white', // Add a background color
-          shadowColor: 'black', // Shadow color
-          shadowOffset: { width: 0, height: 2 }, // Shadow offset
-          shadowOpacity: 0.2, // Shadow opacity
-          shadowRadius: 2, // Shadow radius
-          elevation: 2, // For Android
-        }}
+          style={{ 
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'center',
+            marginHorizontal: 20,
+            paddingVertical: 5,
+            paddingHorizontal: 15,
+            borderRadius: 3,
+            marginTop: 5,
+            backgroundColor: 'white', // Add a background color
+            shadowColor: 'black', // Shadow color
+            shadowOffset: { width: 0, height: 2 }, // Shadow offset
+            shadowOpacity: 0.2, // Shadow opacity
+            shadowRadius: 2, // Shadow radius
+            elevation: 2, // For Android
+          }}
           onPress={() => {setShowModal(true)}}
         >
           <Ionicons name="add-outline" size={32} color="black" />

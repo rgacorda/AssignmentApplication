@@ -51,7 +51,9 @@ export default function CompletedAssignmentsModal( { updateAssignment, deleteAss
           </TouchableOpacity>
           {/* <Text>{assignment.length.toString()}</Text> */}
         </View>
-          <ScrollView>
+          <ScrollView style={{
+            height: 500
+          }}>
             <View >
               {completedAssignmentsExist ? (
                 assignment.map(item => item.completed ? (
