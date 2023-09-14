@@ -7,7 +7,9 @@ export default function AssignmentList({ assignments, updateAssignment, deleteAs
   const unmarkedAssignmentsExist = assignments.some(item => !item.completed);
 
   return(
-      <ScrollView>
+      <ScrollView style={{
+        height: 500
+      }}>
         <View>
         {unmarkedAssignmentsExist ? (
           assignments.map((item) =>

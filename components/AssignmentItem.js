@@ -58,7 +58,7 @@ export default function({ item, updateAssignment, deleteAssignment }) {
                 />
                 {/* display assignment title*/}
                 <Text style={{ marginLeft: 10,color: '#000', textDecorationLine: item.completed ? 'line-through' : 'none' }}>
-                    {item.title.length > 30 ? item.title.slice(0, 30) + '...' : item.title}
+                    {item.title.length > 25 ? item.title.slice(0, 25) + '...' : item.title}
                 </Text>
                 
                 </View>
