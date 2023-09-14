@@ -99,7 +99,7 @@ export default function App() {
             <Feather name="check-square" size={24} color="black" />
           </TouchableOpacity>
 
-          <Text style={{ fontWeight:'bold', fontSize:24, }}>ASSIGNEMNT APP</Text>
+          <Text style={{ fontWeight:'bold', fontSize:24, }}>ASSIGNMENT APP</Text>
 
           <TouchableOpacity 
             style={{
